@@ -11,15 +11,20 @@
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-    "rootDir": "src",
-    "baseUrl": "src",
+    "rootDir": ".",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["*"]
     },
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": true
   },
-  "include": ["src/**/*"],
+  "include": ["./**/*.ts", "prisma/**/*"],
   "exclude": ["node_modules", "dist"]
 }
