@@ -6,16 +6,14 @@
   "scripts": {
     "clean": "rimraf dist",
     "typecheck": "tsc --noEmit",
-    "prebuild": "npm run clean",
-    "build": "tsc --skipLibCheck",
+    "build": "npm run clean && tsc --skipLibCheck",
     "start": "node dist/index.js",
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only index.ts",
     "db:migrate": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
-    "db:generate": "npx prisma generate || (echo 'Prisma generate failed' && exit 1)",
+    "db:generate": "prisma generate",
     "lint": "eslint . --ext .ts",
-    "test": "jest",
-    "prepare": "npm run db:generate"
+    "test": "jest"
   },
   "keywords": [
     "ai",
