@@ -4,12 +4,13 @@
   "description": "Backend for AI Task Evaluation App",
   "main": "dist/index.ts",
   "scripts": {
-    "build": "prisma generate && tsc",
+    "prebuild": "rm -rf dist",
+    "build": "npm run db:generate && tsc",
     "start": "NODE_ENV=production node dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "db:migrate": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
-    "postinstall": "prisma generate",
+    "db:generate": "prisma generate || (echo 'Prisma generate failed' && exit 1)",
     "lint": "eslint . --ext .ts",
     "test": "jest"
   },
