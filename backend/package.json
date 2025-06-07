@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "typecheck": "tsc --noEmit",
-    "build": "npm run clean && tsc --skipLibCheck",
+    "build": "npm run clean && tsc --skipLibCheck --force",
     "start": "node dist/index.js",
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only index.ts",
     "db:migrate": "prisma migrate deploy",

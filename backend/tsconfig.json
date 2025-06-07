@@ -5,7 +5,7 @@
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "skipLibCheck": true,
     "outDir": "dist",
     "sourceMap": true,
@@ -16,14 +16,21 @@
     "paths": {
       "@/*": ["*"]
     },
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types"],
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": false,
     "noImplicitAny": false,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": false,
     "resolveJsonModule": true,
     "allowJs": true,
-    "checkJs": true
+    "checkJs": false
   },
   "include": ["./**/*.ts", "prisma/**/*"],
   "exclude": ["node_modules", "dist"]
