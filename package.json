@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"vite\" \"cd backend && npm run dev\"",
+    "dev": "concurrently \"npx vite\" \"cd backend && npm run dev\"",
     "build": "npm run install:all && npm run build:frontend && npm run build:backend",
-    "build:frontend": "vite build",
+    "build:frontend": "npx vite build",
     "build:backend": "cd backend && npm run build",
     "start": "cd backend && npm run start",
     "install:all": "npm ci && cd backend && npm ci",
