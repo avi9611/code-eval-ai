@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "buildCommand": "cd project && npm run build && cd ../backend && npm run build",
+  "outputDirectory": "project/dist",
+  "builds": [
+    {
+      "src": "project/backend/dist/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["project/backend/dist/**"]
+      }
+    },
+    {
+      "src": "project/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "project/backend/dist/index.js"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "project/dist/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "project/dist/index.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
