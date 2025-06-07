@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "typecheck": "tsc --noEmit",
-    "build": "npm run clean && tsc --skipLibCheck --force",
+    "build": "npm run clean && tsc --skipLibCheck",
     "start": "node dist/index.js",
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only index.ts",
     "db:migrate": "prisma migrate deploy",
@@ -39,7 +39,6 @@
     "@types/compression": "^1.7.5",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
-    "@types/express-validator": "^3.0.0",
     "@types/morgan": "^1.9.9",
     "@types/multer": "^1.4.11",
     "@types/node": "^20.11.30",
