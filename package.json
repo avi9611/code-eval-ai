@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "concurrently \"vite\" \"cd backend && npm run dev\"",
     "build": "npm run install:all && npm run build:frontend && npm run build:backend",
-    "build:frontend": "vite build",
+    "build:frontend": "NODE_ENV=production vite build",
     "build:backend": "cd backend && npm run build",
-    "start": "cd backend && npm run start",
-    "install:all": "npm install && cd backend && npm install",
+    "start": "NODE_ENV=production cd backend && npm run start",
+    "install:all": "npm ci && cd backend && npm ci",
     "lint": "eslint .",
     "preview": "vite preview"
   },

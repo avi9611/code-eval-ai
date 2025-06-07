@@ -1,6 +1,7 @@
 import { EvaluationResponse } from '../types';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+// In production, API calls will be relative to the current domain
+const API_URL = import.meta.env.PROD ? '/api' : import.meta.env.VITE_API_URL || '/api';
 
 export async function evaluateTask(formData: FormData): Promise<EvaluationResponse> {
   try {
