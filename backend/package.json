@@ -10,7 +10,7 @@
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "db:migrate": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
-    "db:generate": "prisma generate || (echo 'Prisma generate failed' && exit 1)",
+    "db:generate": "npx prisma generate || (echo 'Prisma generate failed' && exit 1)",
     "lint": "eslint . --ext .ts",
     "test": "jest"
   },
