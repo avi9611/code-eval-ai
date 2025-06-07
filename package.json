@@ -4,13 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "concurrently \"vite\" \"cd backend && npm run dev\"",
+    "build": "npm run install:all && npm run build:frontend && npm run build:backend",
+    "build:frontend": "vite build",
+    "build:backend": "cd backend && npm run build",
+    "start": "cd backend && npm run start",
+    "install:all": "npm install && cd backend && npm install",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@prisma/client": "^6.7.0",
+    "concurrently": "^8.2.2",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
