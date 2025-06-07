@@ -52,6 +52,18 @@ if (isProduction) {
 // Routes
 app.use('/api/evaluations', evaluationRoutes);
 
+// Root route handler
+app.get('/', (_req, res) => {
+  res.json({
+    message: 'Code Evaluation API',
+    version: '1.0.0',
+    endpoints: {
+      evaluations: '/api/evaluations',
+      health: '/health'
+    }
+  });
+});
+
 // Health check endpoint
 app.get('/health', (_req, res) => {
   res.status(200).json({ status: 'ok' });

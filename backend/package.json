@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf dist",
+    "build": "prisma generate && prisma migrate deploy",
     "start": "node index.js",
     "dev": "cross-env NODE_ENV=development node --watch index.js",
     "db:migrate": "prisma migrate deploy",
