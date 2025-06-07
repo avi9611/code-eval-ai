@@ -23,11 +23,12 @@ app.use(compression());
 // CORS configuration
 app.use(cors({
   origin: isProduction
-    ? process.env.FRONTEND_URL
+    ? ['https://code-eval-ai.vercel.app', 'https://code-eval-ai.vercel.app/api']
     : ['http://localhost:3000', 'http://localhost:5173'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  exposedHeaders: ['Content-Type']
 }));
 
 // Rate limiting

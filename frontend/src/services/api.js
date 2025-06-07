@@ -1,4 +1,5 @@
-const API_URL = import.meta.env.PROD ? '/api' : (import.meta.env.VITE_API_URL || 'http://localhost:8000/api');
+const BACKEND_URL = 'https://code-eval-ai.onrender.com/api';
+const API_URL = import.meta.env.PROD ? BACKEND_URL : (import.meta.env.VITE_API_URL || 'http://localhost:8000/api');
 const TIMEOUT_MS = 30000;
 
 function createApiError(message, status, data) {

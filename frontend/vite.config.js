@@ -34,13 +34,6 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    proxy: {
-      '/api': {
-        target: 'https://code-eval-ai.onrender.com',
-        changeOrigin: true,
-        secure: false,
-      },
-    },
   },
   base: '/',
   resolve: {
